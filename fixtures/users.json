@@ -1,0 +1,26 @@
+{
+  "admin": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "ess": {
+    "username": "John.Smith",
+    "password": "john123"
+  },
+  "invalidUser": {
+    "username": "ghost_user99",
+    "password": "any123"
+  },
+  "wrongPassword": {
+    "username": "Admin",
+    "password": "wrongpassword"
+  },
+  "sqlInjection": {
+    "username": "' OR '1'='1",
+    "password": "anything"
+  },
+  "xssPayload": {
+    "username": "<script>alert('xss')</script>",
+    "password": "admin123"
+  }
+}
