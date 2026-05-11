@@ -1,0 +1,60 @@
+name: OrangeHRM E2E Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox
+
+      - name: Run tests on Chrome
+        run: npm run test:chrome
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ESS_USERNAME: ${{ secrets.ESS_USERNAME }}
+          ESS_PASSWORD: ${{ secrets.ESS_PASSWORD }}
+          BROWSER: chromium
+          HEADLESS: true
+
+      - name: Run tests on Firefox
+        run: npm run test:firefox
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+          ESS_USERNAME: ${{ secrets.ESS_USERNAME }}
+          ESS_PASSWORD: ${{ secrets.ESS_PASSWORD }}
+          BROWSER: firefox
+          HEADLESS: true
+
+      - name: Generate Allure report
+        if: always()
+        run: npm run report:generate
+
+      - name: Upload Allure report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+          retention-days: 30
