@@ -11,12 +11,9 @@ module.exports = {
     ],
     requireModule: ['ts-node/register'],
     format: [
-  'progress-bar',
-  'allure-cucumberjs/reporter'
+      'progress-bar',
+      'json:allure-results/cucumber-report.json'
     ],
-    formatOptions: {
-      resultsDir: 'allure-results'
-    },
     parallel: 1,
     worldParameters: {
       browser: process.env.BROWSER ?? 'chromium',
