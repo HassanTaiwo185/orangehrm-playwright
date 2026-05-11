@@ -12,7 +12,7 @@ module.exports = {
     requireModule: ['ts-node/register'],
     format: [
       'progress-bar',
-      'allure-cucumberjs/reporter'
+      'allure-cucumberjs'
     ],
     formatOptions: {
       resultsDir: 'allure-results'
