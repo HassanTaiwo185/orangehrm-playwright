@@ -33,8 +33,8 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install chromium firefox
 
-      - name: Run tests on Chrome
-        run: npm run test:chrome
+      - name: Run stable tests on Chrome
+        run: npm run test:stable
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
@@ -44,16 +44,22 @@ jobs:
           BROWSER: chromium
           HEADLESS: true
 
-      - name: Run tests on Firefox
-        run: npm run test:firefox
+      - name: Run stable tests on Firefox
+        run: BROWSER=firefox npm run test:stable
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           ESS_USERNAME: ${{ secrets.ESS_USERNAME }}
           ESS_PASSWORD: ${{ secrets.ESS_PASSWORD }}
-          BROWSER: firefox
           HEADLESS: true
+
+      - name: Install Java for Allure
+        if: always()
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Generate Allure report
         if: always()
