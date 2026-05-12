@@ -1,0 +1,86 @@
+{
+  "validAssignment": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Bereavement",
+    "fromDate": "2027-01-06",
+    "toDate": "2027-01-09",
+    "comments": ""
+  },
+  "overlappingLeave": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2026-11-05",
+    "toDate": "2026-11-05",
+    "comments": ""
+  },
+  "noEmployeeName": {
+    "employeeName": "",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2027-01-01",
+    "toDate": "2027-01-03",
+    "comments": ""
+  },
+  "invalidEmployee": {
+    "employeeName": "XXXXXXXXNOMATCH99",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2027-01-01",
+    "toDate": "2027-01-03",
+    "comments": ""
+  },
+  "noLeaveType": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "",
+    "fromDate": "2027-01-01",
+    "toDate": "2027-01-03",
+    "comments": ""
+  },
+  "noFromDate": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "",
+    "toDate": "2027-01-03",
+    "comments": ""
+  },
+  "noToDate": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2027-01-01",
+    "toDate": "",
+    "comments": ""
+  },
+  "pastDate": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2024-01-01",
+    "toDate": "2024-01-03",
+    "comments": ""
+  },
+  "toDateBeforeFromDate": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Vacation",
+    "fromDate": "2027-06-10",
+    "toDate": "2027-06-05",
+    "comments": ""
+  },
+  "singleDay": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Bereavement",
+    "fromDate": "2027-02-20",
+    "toDate": "2027-03-21",
+    "comments": ""
+  },
+  "longComment": {
+    "employeeName": "Peter Mac Anderson",
+    "leaveType": "CAN - Bereavement",
+    "fromDate": "2027-03-01",
+    "toDate": "2027-03-03",
+    "comments": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  },
+  "searchByDateRange": {
+    "fromDate": "2026-01-01",
+    "toDate": "2026-12-31"
+  },
+  "invalidSearch": {
+    "employeeName": "XXXXXXXXNOMATCH99"
+  }
+}
