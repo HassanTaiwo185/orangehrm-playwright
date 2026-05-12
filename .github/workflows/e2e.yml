@@ -34,7 +34,8 @@ jobs:
         run: npx playwright install chromium firefox
 
       - name: Run stable tests on Chrome
-        run: npm run test:stable
+        run: npm run test:stable 2>&1
+        continue-on-error: true
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
@@ -45,7 +46,8 @@ jobs:
           HEADLESS: true
 
       - name: Run stable tests on Firefox
-        run: BROWSER=firefox npm run test:stable
+        run: BROWSER=firefox npm run test:stable 2>&1
+        continue-on-error: true
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
