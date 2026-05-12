@@ -1,28 +1,20 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { When, Then } from '@cucumber/cucumber';
 import { OrangeHRMWorld } from '../hooks/world';
-import { LoginPage } from '../pages/LoginPage';
 import { LeavePage } from '../pages/LeavePage';
-import users from '../../fixtures/users.json';
 import leaveData from '../../fixtures/leave.json';
 
 let leavePage: LeavePage;
 
-Given('I am logged in as Admin', async function (this: OrangeHRMWorld) {
-    const loginPage = new LoginPage(this.page);
-    await loginPage.goto();
-    await loginPage.enterUserName(users.admin.username);
-    await loginPage.enterPassword(users.admin.password);
-    await loginPage.clickLoginButton();
-    await loginPage.assertDashBoard();
-    leavePage = new LeavePage(this.page);
-});
 
 When('I navigate to Assign Leave page', async function (this: OrangeHRMWorld) {
+    leavePage = new LeavePage(this.page);
     await leavePage.navigateToAssignLeave();
     await leavePage.assertOnAssignLeave();
+
 });
 
 When('I navigate to Leave List page', async function (this: OrangeHRMWorld) {
+    leavePage = new LeavePage(this.page);
     await leavePage.navigateToLeaveList();
     await leavePage.assertOnLeaveList();
 });

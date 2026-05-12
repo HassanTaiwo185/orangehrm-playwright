@@ -1,0 +1,28 @@
+{
+  "searchByShortlisted": {
+    "status": "Shortlisted"
+  },
+  "searchByRejected": {
+    "status": "Rejected"
+  },
+  "searchBySeniorQA": {
+    "vacancy": "Senior QA Lead"
+  },
+  "searchByPayroll": {
+    "vacancy": "Payroll Administrator"
+  },
+  "searchByManual": {
+    "method": "Manual"
+  },
+  "searchByStatusAndVacancy": {
+    "status": "Shortlisted",
+    "vacancy": "Senior QA Lead"
+  },
+  "searchNoResults": {
+    "status": "Application Initiated",
+    "vacancy": "Software Engineer"
+  },
+  "invalidCandidateName": {
+    "candidateName": "XXXXXXXXNOMATCH99"
+  }
+}
