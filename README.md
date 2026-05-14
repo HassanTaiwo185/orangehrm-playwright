@@ -254,3 +254,4 @@ In a production environment these issues are resolved by running against a dedic
 ## Author
 
 Hassan Taiwo — QA Automation Engineer  
+GitHub: https://github.com/HassanTaiwo185 
